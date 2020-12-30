@@ -2,14 +2,14 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import myWeb from '@/components/myWeb'
-import aboutYou from '@/components/myResume'
+import aboutMe from '@/components/myResume'
 import login from '@/view/index-login'
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/login',
       name: 'login',
       component: login,
       meta: {
@@ -19,19 +19,26 @@ export default new Router({
     {
       path: '/hello',
       name: 'hello',
-      component: HelloWorld
+      component: HelloWorld,
+      meta: {
+        requireAuth: true
+      }
     },
     {
       path: '/myWeb',
       name: 'myWeb',
-      component: myWeb
+      component: myWeb,
+      meta: {
+        requireAuth: true
+      }
     },
     {
-      path: '/aboutYou',
-      name: 'aboutYou',
-      component: aboutYou,
+      path: '/aboutMe',
+      name: 'aboutMe',
+      component: aboutMe,
       meta: {
-        title: '我的'
+        title: '我的',
+        requireAuth: false
       }
     }
   ]

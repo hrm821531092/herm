@@ -64,7 +64,7 @@ export default {
             this.$alert('账号或密码错误!')
           } else {
             console.log(this.loginForm)
-            this.$router.push('myWeb')
+            this.$router.push('aboutMe')
           }
         } else {
           console.log('error submit!!')

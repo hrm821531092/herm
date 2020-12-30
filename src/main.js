@@ -13,10 +13,11 @@ Vue.use(VueResource)
 Vue.use(ElementUi)
 Vue.config.productionTip = false
 router.beforeEach((to, from, next) => {
-  if (to.meta.title) {
-    document.title = to.meta.title
+  if (to.meta.requireAuth) {
+    next({path: '/aboutMe'})
+  } else {
+    next({path: '/aboutMe'})
   }
-  next()
 })
 /* eslint-disable no-new */
 new Vue({
